@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — PointCloud Studio for iPad and Mac</title>
+  <meta name="description" content="Support, requirements and frequently asked questions for PointCloud Studio on iPad and Mac." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { brand: { black: '#04070c', darker: '#070c14', card: '#0c1322', border: '#162238', cyan: '#38bdf8' } },
+        fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
+      } }
+    };
+  </script>
+  <style>
+    body { background-color: #04070c; color: #e2e8f0; }
+    .prose-pcs h2 { color: #f1f5f9; font-weight: 600; font-size: 1.15rem; margin-top: 2rem; margin-bottom: .5rem; }
+    .prose-pcs p, .prose-pcs li { color: #cbd5e1; line-height: 1.7; font-size: .95rem; }
+    .prose-pcs ul { list-style: disc; padding-left: 1.25rem; margin: .5rem 0; }
+    .prose-pcs a { color: #38bdf8; }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col">
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-brand-black/85 border-b border-brand-border">
+    <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded border border-brand-cyan/40 bg-brand-cyan/10 flex items-center justify-center text-brand-cyan font-mono font-bold text-sm">MH</div>
+        <div class="leading-tight">
+          <span class="text-slate-100 font-semibold tracking-wide text-sm block">Mingyi Hsu</span>
+          <span class="text-brand-cyan text-xs font-mono">geospatial.dev</span>
+        </div>
+      </a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/#flagship" class="hover:text-brand-cyan">PointCloud Studio</a>
+        <a href="/pointcloud-studio/support.html" class="hover:text-brand-cyan">Support</a>
+        <a href="/pointcloud-studio/privacy.html" class="hover:text-brand-cyan">Privacy</a>
+      </nav>
+    </div>
+  </header>
+  <main class="flex-1">
+    <div class="max-w-3xl mx-auto px-6 py-14 prose-pcs">
+      <span class="text-xs font-mono uppercase tracking-widest text-brand-cyan">PointCloud Studio for iPad and Mac</span>
+      <h1 class="text-3xl font-bold text-slate-100 mt-1">Support</h1>
+      <p class="mt-4">For questions, bug reports and suggestions, write to
+      <a href="mailto:smingyi.hsu@gmail.com?subject=PointCloud%20Studio">smingyi.hsu@gmail.com</a>. Please include the app
+      version (shown under Help › About PointCloud Studio), your device and system version, and — if possible — the steps or
+      a small sample file that shows the problem.</p>
+
+      <h2>Requirements</h2>
+      <ul>
+        <li>iPad with iPadOS 17 or later, or a Mac with macOS 14 or later (Apple silicon or Intel).</li>
+        <li>Large point clouds and photogrammetry benefit from more memory; recent iPad Pro / M-series Macs are recommended.</li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+      <p><strong class="text-slate-100">Which files can I open?</strong><br>
+      Point clouds in LAS, LAZ and XYZ / text formats; GeoTIFF and ESRI ASCII grids; routes and vector files (Shapefile,
+      GeoPackage, GeoJSON, KML, GPX, DXF, CSV); and PointCloud Studio projects.</p>
+      <p><strong class="text-slate-100">Are projects compatible with the Windows version?</strong><br>
+      Yes. Projects saved on iPad or Mac open in PointCloud Studio for Windows and the other way round.</p>
+      <p><strong class="text-slate-100">What is free and what do Pro and Advanced add?</strong><br>
+      Viewing, cleaning, TIN / DEM surfaces, sections and exports are free. Pro adds coordinate systems, vector files, routes,
+      filters and classification, contours, volumes, earthworks and cable analyses. Advanced adds hydrographic QC (CUBE,
+      IHO S-44), multi-year cable assessment, scour and sand waves, land analyses, meshes and models, and point clouds from
+      photos, video or a stereo rig. The bundled sample photos can be reconstructed for free (Reconstruct › Try with
+      Sample Photos…).</p>
+      <p><strong class="text-slate-100">I bought Pro / Advanced on another device. How do I unlock it here?</strong><br>
+      Open Help › Upgrade to Pro / Advanced and tap <em>Restore Purchases</em>, signed in with the same Apple ID.</p>
+      <p><strong class="text-slate-100">How do I cancel a subscription?</strong><br>
+      In the App Store: your account › Subscriptions, or on the Mac in System Settings › your name › Media &amp; Purchases.
+      Lifetime purchases are not subscriptions and do not renew.</p>
+      <p><strong class="text-slate-100">Can the results be used for navigation?</strong><br>
+      No. Results are for engineering reference only and do not replace certified hydrographic software and QC procedures.</p>
+
+      <h2>Privacy</h2>
+      <p>The app processes everything on your device and collects no personal data — see the
+      <a href="/pointcloud-studio/privacy.html">privacy policy</a>.</p>
+    </div>
+  </main>
+  <footer class="py-10 bg-brand-black border-t border-brand-border">
+    <div class="max-w-3xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-mono gap-4">
+      <div>&copy; 2026 Mingyi (Ming-Yi) Hsu. All rights reserved.</div>
+      <div class="flex gap-4">
+        <a href="/pointcloud-studio/support.html" class="hover:text-brand-cyan">Support</a>
+        <a href="/pointcloud-studio/privacy.html" class="hover:text-brand-cyan">Privacy policy</a>
+        <a href="mailto:smingyi.hsu@gmail.com" class="hover:text-brand-cyan">smingyi.hsu@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

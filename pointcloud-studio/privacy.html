@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — PointCloud Studio for iPad and Mac</title>
+  <meta name="description" content="PointCloud Studio for iPadOS and macOS collects no personal data; all processing happens on the device." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { brand: { black: '#04070c', darker: '#070c14', card: '#0c1322', border: '#162238', cyan: '#38bdf8' } },
+        fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
+      } }
+    };
+  </script>
+  <style>
+    body { background-color: #04070c; color: #e2e8f0; }
+    .prose-pcs h2 { color: #f1f5f9; font-weight: 600; font-size: 1.15rem; margin-top: 2rem; margin-bottom: .5rem; }
+    .prose-pcs p, .prose-pcs li { color: #cbd5e1; line-height: 1.7; font-size: .95rem; }
+    .prose-pcs ul { list-style: disc; padding-left: 1.25rem; margin: .5rem 0; }
+    .prose-pcs a { color: #38bdf8; }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col">
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-brand-black/85 border-b border-brand-border">
+    <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded border border-brand-cyan/40 bg-brand-cyan/10 flex items-center justify-center text-brand-cyan font-mono font-bold text-sm">MH</div>
+        <div class="leading-tight">
+          <span class="text-slate-100 font-semibold tracking-wide text-sm block">Mingyi Hsu</span>
+          <span class="text-brand-cyan text-xs font-mono">geospatial.dev</span>
+        </div>
+      </a>
+      <nav class="flex items-center gap-6 text-sm text-slate-300">
+        <a href="/#flagship" class="hover:text-brand-cyan">PointCloud Studio</a>
+        <a href="/pointcloud-studio/support.html" class="hover:text-brand-cyan">Support</a>
+        <a href="/pointcloud-studio/privacy.html" class="hover:text-brand-cyan">Privacy</a>
+      </nav>
+    </div>
+  </header>
+  <main class="flex-1">
+    <div class="max-w-3xl mx-auto px-6 py-14 prose-pcs">
+      <span class="text-xs font-mono uppercase tracking-widest text-brand-cyan">PointCloud Studio for iPad and Mac</span>
+      <h1 class="text-3xl font-bold text-slate-100 mt-1">Privacy Policy</h1>
+      <p class="text-slate-400 text-sm mt-2">Effective 9 November 2026</p>
+
+      <p class="mt-6">This policy describes how the PointCloud Studio app for iPadOS and macOS ("the app"), developed by
+      Mingyi Hsu, handles information. In short: <strong class="text-slate-100">the app does not collect, store on a server,
+      share or sell any personal data.</strong></p>
+
+      <h2>Data the app collects</h2>
+      <p>None. The app has no user accounts, analytics, advertising, tracking or crash-reporting services, and it does not
+      send your data to the developer or to anyone else.</p>
+
+      <h2>Your files</h2>
+      <p>Point clouds, surfaces, routes, vector files, photos, videos and projects that you open are processed only on your
+      device. The app reads and writes only the files and folders you choose (and its own app folder). It does not upload
+      them. Location information stored inside your own files — for example GPS positions in the EXIF data of photos used
+      to build a point cloud — is read on the device only to georeference that result.</p>
+
+      <h2>Network</h2>
+      <p>The app does not need an internet connection and makes no network requests of its own. The only exception is the
+      purchase process described below, which is handled by Apple.</p>
+
+      <h2>Purchases</h2>
+      <p>In-app purchases and subscriptions are processed by Apple through the App Store. The developer does not receive
+      your payment details or Apple ID. The app only receives from Apple whether a purchase is active, so that the
+      corresponding features can be unlocked on your devices. See
+      <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noreferrer">Apple's privacy policy</a>.</p>
+
+      <h2>Settings stored on your device</h2>
+      <p>The app keeps your preferences (for example display settings and recently opened projects) on your device using
+      the standard system storage. They are not transmitted anywhere and are removed when you delete the app.</p>
+
+      <h2>Children</h2>
+      <p>The app is a professional engineering tool and is not directed at children. It collects no information from anyone,
+      including children.</p>
+
+      <h2>Changes</h2>
+      <p>If this policy changes, the new version will be published on this page with a new effective date.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about this policy: Mingyi Hsu, <a href="mailto:smingyi.hsu@gmail.com">smingyi.hsu@gmail.com</a>.</p>
+    </div>
+  </main>
+  <footer class="py-10 bg-brand-black border-t border-brand-border">
+    <div class="max-w-3xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-mono gap-4">
+      <div>&copy; 2026 Mingyi (Ming-Yi) Hsu. All rights reserved.</div>
+      <div class="flex gap-4">
+        <a href="/pointcloud-studio/support.html" class="hover:text-brand-cyan">Support</a>
+        <a href="/pointcloud-studio/privacy.html" class="hover:text-brand-cyan">Privacy policy</a>
+        <a href="mailto:smingyi.hsu@gmail.com" class="hover:text-brand-cyan">smingyi.hsu@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
