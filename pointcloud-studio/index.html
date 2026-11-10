@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PointCloud Studio | Mingyi (Ming-Yi) Hsu</title>
+  <meta name="description" content="PointCloud Studio: survey point clouds from raw points to engineering answers — Windows desktop app, and iPad and Mac app on the App Store." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#04070c',
+              darker: '#070c14',
+              card: '#0c1322',
+              border: '#162238',
+              cyan: '#38bdf8',
+              glow: '#00d2ff',
+              textMuted: '#94a3b8'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      background-color: #04070c;
+      color: #e2e8f0;
+    }
+    .grid-bg {
+      background-image: linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .cyan-glow {
+      box-shadow: 0 0 25px -5px rgba(56, 189, 248, 0.25);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-sky-500/30 selection:text-sky-200 min-h-screen flex flex-col">
+
+  <!-- Top Navigation -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-brand-black/85 border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 rounded border border-brand-cyan/40 bg-brand-cyan/10 flex items-center justify-center text-brand-cyan font-mono font-bold text-sm group-hover:cyan-glow transition-all">
+          MH
+        </div>
+        <div class="leading-tight">
+          <span class="text-slate-100 font-semibold tracking-wide text-sm block">Mingyi Hsu</span>
+          <span class="text-brand-cyan text-xs font-mono">geospatial.dev</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="/#about" class="hover:text-brand-cyan transition-colors">About</a>
+        <a href="/#experience" class="hover:text-brand-cyan transition-colors">Experience</a>
+        <a href="/pointcloud-studio/" class="text-brand-cyan">PointCloud Studio</a>
+        <a href="/#domains" class="hover:text-brand-cyan transition-colors">Domains</a>
+        <a href="/#skills" class="hover:text-brand-cyan transition-colors">Technical Stack</a>
+        <a href="/#contact" class="hover:text-brand-cyan transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://www.linkedin.com/in/ming-yi-hsu-68284679/" target="_blank" rel="noreferrer"
+           class="flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-brand-border bg-brand-card hover:border-brand-cyan/60 hover:text-brand-cyan transition text-xs font-mono">
+          <i class="ph ph-linkedin-logo text-base"></i>
+          <span class="hidden sm:inline">LinkedIn</span>
+        </a>
+        <a href="https://github.com/skyflying" target="_blank" rel="noreferrer"
+           class="flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-brand-border bg-brand-card hover:border-brand-cyan/60 hover:text-brand-cyan transition text-xs font-mono">
+          <i class="ph ph-github-logo text-base"></i>
+          <span class="hidden sm:inline">GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+    <!-- Hero Section -->
+  <section class="relative pt-20 pb-16 overflow-hidden border-b border-brand-border grid-bg">
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-cyan/30 bg-brand-cyan/10 text-brand-cyan text-xs font-mono mb-6">
+        <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span>
+        Windows · iPad · Mac
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-slate-100 max-w-3xl leading-tight">
+        PointCloud Studio <br/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-teal-300 to-sky-200">From raw 3D points to engineering answers</span>
+      </h1>
+      <p class="text-slate-400 mt-6 max-w-2xl leading-relaxed">Survey point clouds — multibeam, LiDAR and photogrammetry, from millions to hundreds of millions of points — cleaned,
+      turned into surfaces and sections, and analysed for subsea cables, seabed change and earthworks, at sea and on land. The same projects open on Windows,
+      iPad and Mac.</p>
+      <div class="flex flex-wrap items-center gap-3 mt-8 text-xs font-mono">
+        <a href="#windows" class="px-4 py-2 rounded-lg border border-brand-border bg-brand-card hover:border-brand-cyan text-slate-300 hover:text-brand-cyan flex items-center gap-2 transition"><i class="ph ph-windows-logo text-base"></i> Windows</a>
+        <a href="#apple" class="px-4 py-2 rounded-lg border border-brand-border bg-brand-card hover:border-brand-cyan text-slate-300 hover:text-brand-cyan flex items-center gap-2 transition"><i class="ph ph-apple-logo text-base"></i> iPad &amp; Mac</a>
+        <a href="/pointcloud-studio/support.html" class="px-4 py-2 rounded-lg border border-brand-border bg-brand-card hover:border-brand-cyan text-slate-300 hover:text-brand-cyan flex items-center gap-2 transition"><i class="ph ph-lifebuoy text-base"></i> Support &amp; FAQ</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="windows" class="py-16 border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-brand-cyan">Windows</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-100 mt-1">PointCloud Studio for Windows</h2>
+          <p class="text-slate-400 text-sm mt-1">From raw 3D spatial points to engineering answers — at sea and on land.</p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          Windows Desktop App | C++ / Python / Qt
+        </div>
+      </div>
+
+      <!-- Main Showcase Container -->
+      <div class="rounded-xl border border-brand-border bg-brand-card overflow-hidden cyan-glow">
+        
+        <!-- Video Header bar -->
+        <div class="px-4 py-3 bg-brand-black/90 border-b border-brand-border flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+            <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+            <span class="ml-2 text-xs font-mono text-slate-400">demo_walkthrough.mp4</span>
+          </div>
+          <span class="text-xs font-mono text-brand-cyan">Interactive Chapters</span>
+        </div>
+
+        <!-- Video Player -->
+        <div class="relative bg-black aspect-video flex items-center justify-center">
+          <video id="demoVideo" controls autoplay muted loop playsinline class="w-full h-full object-contain">
+            <source src="/PointCloud_Studio_demo_v2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- Interactive Chapter Navigation -->
+        <div class="p-4 bg-brand-darker border-t border-brand-border">
+          <div class="text-xs font-mono text-slate-400 mb-2">Jump to Chapter:</div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+            <button onclick="seekVideo(0)" class="px-3 py-2 rounded bg-brand-card border border-brand-border hover:border-brand-cyan text-left text-xs transition group">
+              <span class="text-brand-cyan font-mono block">00:00</span>
+              <span class="text-slate-200 group-hover:text-brand-cyan">01. Import & View[cite: 1]</span>
+            </button>
+            <button onclick="seekVideo(42)" class="px-3 py-2 rounded bg-brand-card border border-brand-border hover:border-brand-cyan text-left text-xs transition group">
+              <span class="text-brand-cyan font-mono block">00:42</span>
+              <span class="text-slate-200 group-hover:text-brand-cyan">02. Noise Filter[cite: 1]</span>
+            </button>
+            <button onclick="seekVideo(57)" class="px-3 py-2 rounded bg-brand-card border border-brand-border hover:border-brand-cyan text-left text-xs transition group">
+              <span class="text-brand-cyan font-mono block">00:57</span>
+              <span class="text-slate-200 group-hover:text-brand-cyan">03. Surfaces & TIN[cite: 1]</span>
+            </button>
+            <button onclick="seekVideo(77)" class="px-3 py-2 rounded bg-brand-card border border-brand-border hover:border-brand-cyan text-left text-xs transition group">
+              <span class="text-brand-cyan font-mono block">01:17</span>
+              <span class="text-slate-200 group-hover:text-brand-cyan">04. Cable Depth[cite: 1]</span>
+            </button>
+            <button onclick="seekVideo(102)" class="px-3 py-2 rounded bg-brand-card border border-brand-border hover:border-brand-cyan text-left text-xs transition group">
+              <span class="text-brand-cyan font-mono block">01:42</span>
+              <span class="text-slate-200 group-hover:text-brand-cyan">05. Trench Sweep[cite: 1]</span>
+            </button>
+            <button onclick="seekVideo(122)" class="px-3 py-2 rounded bg-brand-card border border-brand-border hover:border-brand-cyan text-left text-xs transition group">
+              <span class="text-brand-cyan font-mono block">02:02</span>
+              <span class="text-slate-200 group-hover:text-brand-cyan">06. Rock Berm[cite: 1]</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Toolkit Core Modules Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-brand-border border-t border-brand-border bg-brand-card/50">
+          <div class="p-5">
+            <div class="text-brand-cyan font-mono text-xs uppercase mb-1">Seabed & Cable Routing</div>
+            <h4 class="text-slate-200 font-semibold text-sm mb-2">Depth of Burial & Migration</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Automated cable profile extraction from route lines. Analyzes clearance depths, detects free spans, and evaluates terrain mobility.
+            </p>
+          </div>
+          <div class="p-5">
+            <div class="text-brand-cyan font-mono text-xs uppercase mb-1">Earthworks & Trenching</div>
+            <h4 class="text-slate-200 font-semibold text-sm mb-2">Parametric Corridor Sweeps</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Dynamic cross-section sweeping with configurable slopes and target depths. Rapid earthwork volume calculations ready for export.
+            </p>
+          </div>
+          <div class="p-5">
+            <div class="text-brand-cyan font-mono text-xs uppercase mb-1">Verification & Land</div>
+            <h4 class="text-slate-200 font-semibold text-sm mb-2">As-Built Deviation & Grading</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Placement deviation mapping against design models. Platform cut-and-fill balancing for onshore substations and solar facilities.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Applications & Survey Domains -->
+  <!-- iPad & Mac -->
+  <section id="apple" class="py-20 border-b border-brand-border bg-brand-darker/50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-brand-cyan">iPad &amp; Mac</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-100 mt-1">PointCloud Studio for iPad and Mac</h2>
+          <p class="text-slate-400 text-sm mt-1">The core tools are free; Pro and Advanced are in-app purchases. Processing stays on the device.</p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+          <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+          iPadOS 17 · macOS 14 | Swift · Metal
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl border border-brand-border bg-brand-card hover:border-brand-cyan/60 transition group">
+          <div class="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan mb-4 group-hover:scale-105 transition-transform">
+            <i class="ph ph-cube text-xl"></i>
+          </div>
+          <h3 class="text-slate-200 font-semibold text-base mb-2">Free</h3>
+          <ul class="text-xs text-slate-400 space-y-2">
+            <li>• LAS, LAZ and XYZ point clouds; GeoTIFF / ASCII grids</li>
+            <li>• Fast 3D view, colour by height, intensity, RGB or class</li>
+            <li>• Box, polygon and section selection; reject and trash</li>
+            <li>• TIN and DEM surfaces (incl. shoalest depth), sections</li>
+            <li>• Export points, TIN and DEM; Windows-compatible projects</li>
+          </ul>
+        </div>
+        <div class="p-6 rounded-xl border border-brand-border bg-brand-card hover:border-brand-cyan/60 transition group">
+          <div class="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan mb-4 group-hover:scale-105 transition-transform">
+            <i class="ph ph-path text-xl"></i>
+          </div>
+          <h3 class="text-slate-200 font-semibold text-base mb-2">Pro</h3>
+          <ul class="text-xs text-slate-400 space-y-2">
+            <li>• Coordinate systems (EPSG), vector files, routes and KP</li>
+            <li>• Noise filters; ground, vegetation and building classes</li>
+            <li>• Subset editor, contours, volumes, earthworks design</li>
+            <li>• Depth of burial, free spans, rock berms, structures</li>
+          </ul>
+        </div>
+        <div class="p-6 rounded-xl border border-brand-border bg-brand-card hover:border-brand-cyan/60 transition group">
+          <div class="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan mb-4 group-hover:scale-105 transition-transform">
+            <i class="ph ph-waves text-xl"></i>
+          </div>
+          <h3 class="text-slate-200 font-semibold text-base mb-2">Advanced</h3>
+          <ul class="text-xs text-slate-400 space-y-2">
+            <li>• Hydrographic QC: CUBE and IHO S-44 Ed. 6</li>
+            <li>• Multi-year cable assessment with Excel report and figures</li>
+            <li>• Scour at monopiles and sand wave migration</li>
+            <li>• Land: terrain, change detection, stockpiles, roads, hydrology</li>
+            <li>• Meshes and models (planes, cylinders, buildings)</li>
+            <li>• Point clouds from photos, video or a stereo rig</li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        <div class="p-6 rounded-xl border border-brand-border bg-brand-card hover:border-brand-cyan/60 transition group">
+          <div class="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan mb-4 group-hover:scale-105 transition-transform">
+            <i class="ph ph-camera text-xl"></i>
+          </div>
+          <h3 class="text-slate-200 font-semibold text-base mb-2">Try photogrammetry for free</h3>
+          <ul class="text-xs text-slate-400 space-y-2">
+            <li>• Reconstruct › Try with Sample Photos…</li>
+            <li>• 12 bundled aerial photos with ground control points</li>
+            <li>• Your own photos, video and stereo rigs: Advanced</li>
+          </ul>
+        </div>
+        <div class="p-6 rounded-xl border border-brand-border bg-brand-card hover:border-brand-cyan/60 transition group">
+          <div class="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan mb-4 group-hover:scale-105 transition-transform">
+            <i class="ph ph-shield-check text-xl"></i>
+          </div>
+          <h3 class="text-slate-200 font-semibold text-base mb-2">Your data stays on the device</h3>
+          <ul class="text-xs text-slate-400 space-y-2">
+            <li>• No account, analytics, advertising or tracking</li>
+            <li>• No uploads — the app makes no network requests</li>
+            <li>• Purchases are handled by Apple</li>
+          </ul>
+        </div>
+        <div class="p-6 rounded-xl border border-brand-border bg-brand-card hover:border-brand-cyan/60 transition group">
+          <div class="w-10 h-10 rounded-lg bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan mb-4 group-hover:scale-105 transition-transform">
+            <i class="ph ph-device-tablet-camera text-xl"></i>
+          </div>
+          <h3 class="text-slate-200 font-semibold text-base mb-2">Requirements</h3>
+          <ul class="text-xs text-slate-400 space-y-2">
+            <li>• iPad with iPadOS 17 or later</li>
+            <li>• Mac with macOS 14 or later (Apple silicon or Intel)</li>
+            <li>• More memory helps with very large clouds and photos</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-3 mt-8 text-xs font-mono">
+        <span class="px-4 py-2 rounded-lg border border-brand-cyan/40 bg-brand-cyan/10 text-brand-cyan flex items-center gap-2"><i class="ph ph-app-store-logo text-base"></i> Coming soon to the App Store</span>
+        <a href="/pointcloud-studio/support.html" class="px-4 py-2 rounded-lg border border-brand-border bg-brand-card hover:border-brand-cyan text-slate-300 hover:text-brand-cyan flex items-center gap-2 transition"><i class="ph ph-lifebuoy text-base"></i> Support &amp; FAQ</a>
+        <a href="/pointcloud-studio/privacy.html" class="px-4 py-2 rounded-lg border border-brand-border bg-brand-card hover:border-brand-cyan text-slate-300 hover:text-brand-cyan flex items-center gap-2 transition"><i class="ph ph-shield-check text-base"></i> Privacy policy</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="py-16 bg-brand-black border-t border-brand-border mt-auto">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-12 border-b border-brand-border">
+        <div>
+          <h3 class="text-xl font-bold text-slate-100">Questions about PointCloud Studio?</h3>
+          <p class="text-slate-400 text-sm mt-1">Results are for engineering reference only and not for navigation. Support: <a href="/pointcloud-studio/support.html" class="text-brand-cyan hover:underline">FAQ</a> · <a href="/pointcloud-studio/privacy.html" class="text-brand-cyan hover:underline">Privacy policy</a></p>
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="https://www.linkedin.com/in/ming-yi-hsu-68284679/" target="_blank" rel="noreferrer" 
+             class="px-4 py-2 rounded-lg border border-brand-cyan/40 bg-brand-cyan/10 hover:border-brand-cyan text-brand-cyan text-xs font-mono flex items-center gap-2 transition">
+            <i class="ph ph-linkedin-logo text-base"></i> LinkedIn Profile
+          </a>
+          <a href="https://github.com/skyflying" target="_blank" rel="noreferrer" 
+             class="px-4 py-2 rounded-lg border border-brand-border bg-brand-card hover:border-brand-cyan text-slate-300 hover:text-brand-cyan text-xs font-mono flex items-center gap-2 transition">
+            <i class="ph ph-github-logo text-base"></i> GitHub / skyflying
+          </a>
+          <a href="mailto:smingyi.hsu@gmail.com?subject=PointCloud%20Studio"
+             class="px-4 py-2 rounded-lg border border-brand-border bg-brand-card hover:border-brand-cyan text-slate-300 hover:text-brand-cyan text-xs font-mono flex items-center gap-2 transition">
+            <i class="ph ph-envelope-simple text-base"></i> smingyi.hsu@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-mono gap-4">
+        <div>&copy; 2026 Mingyi (Ming-Yi) Hsu. All rights reserved.</div>
+        <div>Subsea Engineering & Geospatial Analytics</div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Video Seek Control Script -->
+  <script>
+    function seekVideo(seconds) {
+      const vid = document.getElementById('demoVideo');
+      if (vid) {
+        vid.currentTime = seconds;
+        vid.play();
+      }
+    }
+  </script>
+</body>
+</html>
